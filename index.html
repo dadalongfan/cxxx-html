@@ -1,0 +1,1967 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>物理题目详解 - 郑州创新科技中等专业学校</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36CFC9',
+                        accent: '#722ED1',
+                        warning: '#FF7D00',
+                        success: '#00B42A',
+                        danger: '#F53F3F',
+                        dark: '#1D2129',
+                        light: '#F2F3F5',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                },
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        /* 自定义滑块样式 */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-webkit-slider-track {
+            background: #E5E7EB;
+            height: 8px;
+            border-radius: 4px;
+        }
+
+        input[type="range"]::-moz-range-track {
+            background: #E5E7EB;
+            height: 8px;
+            border-radius: 4px;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            background: #165DFF;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            margin-top: -6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            background: #165DFF;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        input[type="range"]:focus {
+            outline: none;
+        }
+
+        input[type="range"]:focus::-webkit-slider-thumb {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 0 0 2px rgba(22, 93, 255, 0.3);
+        }
+
+        input[type="range"]:focus::-moz-range-thumb {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 0 0 2px rgba(22, 93, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- 导航栏 -->
+    <header class="bg-white shadow-md fixed w-full top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-book text-primary text-2xl"></i>
+                <h1 class="text-lg md:text-xl font-bold text-dark">郑州创新科技中等专业学校</h1>
+            </div>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#problem" class="text-dark hover:text-primary transition-colors">题目</a>
+                <a href="#animation" class="text-dark hover:text-primary transition-colors">动图演示</a>
+                <a href="#solution" class="text-dark hover:text-primary transition-colors">解析</a>
+                <a href="#knowledge" class="text-dark hover:text-primary transition-colors">知识点</a>
+                <a href="#similar" class="text-dark hover:text-primary transition-colors">类似题目</a>
+            </nav>
+            <button class="md:hidden text-dark text-xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 主内容 -->
+    <main class="container mx-auto px-4 pt-24 pb-16">
+        <!-- 学校标识 -->
+        <div class="text-center mb-10">
+            <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-2">物理题目详解</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                通过动画演示和详细解析，帮助学生更好地理解物理概念和解题方法
+            </p>
+        </div>
+
+        <!-- 题目部分 -->
+        <section id="problem" class="mb-12 bg-white rounded-xl shadow-lg p-6 md:p-8">
+            <div class="flex items-center mb-6">
+                <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">
+                    <i class="fa fa-question text-xl"></i>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-dark">第14题：碰撞与摩擦综合问题</h3>
+            </div>
+            
+            <div class="prose max-w-none">
+                <p class="mb-4 text-gray-800 leading-relaxed">
+                    如图，在一段水平光滑直道上每隔<span class="inline-block px-2 py-1 bg-light rounded text-dark font-semibold">l₁=3m</span>铺设有宽度为<span class="inline-block px-2 py-1 bg-light rounded text-dark font-semibold">l₂=2.4m</span>的防滑带。在最左端防滑带的左边缘静止有质量为<span class="inline-block px-2 py-1 bg-light rounded text-dark font-semibold">m₁=2kg</span>的小物块P，另一质量为<span class="inline-block px-2 py-1 bg-light rounded text-dark font-semibold">m₂=4kg</span>的小物块Q以<span class="inline-block px-2 py-1 bg-light rounded text-dark font-semibold">v₀=7m/s</span>的速度向右运动并与P发生正碰，且碰撞时间极短。已知碰撞后瞬间P的速度大小为<span class="inline-block px-2 py-1 bg-light rounded text-dark font-semibold">v=7m/s</span>，P、Q与防滑带间的动摩擦因数均为<span class="inline-block px-2 py-1 bg-light rounded text-dark font-semibold">μ=0.5</span>，重力加速度大小<span class="inline-block px-2 py-1 bg-light rounded text-dark font-semibold">g=10m/s²</span>。求：
+                </p>
+                
+                <!-- 题目图示 -->
+                <div class="my-8 bg-gray-50 p-4 rounded-lg flex justify-center">
+                    <div class="relative w-full max-w-2xl h-48 bg-white border-2 border-gray-200 rounded-lg overflow-hidden">
+                        <svg class="w-full h-full" viewBox="0 0 800 200">
+                            <!-- 滑块Q -->
+                            <rect x="50" y="100" width="40" height="60" fill="#3B82F6" rx="5"></rect>
+                            <text x="70" y="135" text-anchor="middle" fill="white" font-size="16" font-weight="bold">Q</text>
+                            
+                            <!-- 滑块P -->
+                            <rect x="110" y="100" width="40" height="60" fill="#F59E0B" rx="5"></rect>
+                            <text x="130" y="135" text-anchor="middle" fill="white" font-size="16" font-weight="bold">P</text>
+                            
+                            <!-- 箭头指示速度 -->
+                            <line x1="70" y1="100" x2="70" y2="70" stroke="#EF4444" stroke-width="3" marker-end="url(#arrowhead)"></line>
+                            <text x="70" y="60" text-anchor="middle" fill="#EF4444" font-size="14">v₀</text>
+                            
+                            <!-- 防滑带1 -->
+                            <rect x="100" y="160" width="96" height="20" fill="#FBBF24" fill-opacity="0.6" rx="3"></rect>
+                            
+                            <!-- 防滑带2 -->
+                            <rect x="220" y="160" width="96" height="20" fill="#FBBF24" fill-opacity="0.6" rx="3"></rect>
+                            
+                            <!-- 防滑带3 -->
+                            <rect x="340" y="160" width="96" height="20" fill="#FBBF24" fill-opacity="0.6" rx="3"></rect>
+                            
+                            <!-- 地面线条 -->
+                            <line x1="0" y1="180" x2="800" y2="180" stroke="#6B7280" stroke-width="2" stroke-dasharray="5,5"></line>
+                            
+                            <!-- 省略号 -->
+                            <text x="460" y="130" fill="#6B7280" font-size="30">...</text>
+                            
+                            <!-- 尺寸标注 -->
+                            <line x1="200" y1="170" x2="220" y2="170" stroke="#1F2937" stroke-width="2"></line>
+                            <text x="210" y="195" text-anchor="middle" fill="#1F2937" font-size="12">l₁</text>
+                            
+                            <line x1="100" y1="170" x2="200" y2="170" stroke="#1F2937" stroke-width="2"></line>
+                            <text x="150" y="195" text-anchor="middle" fill="#1F2937" font-size="12">l₂</text>
+                        </svg>
+                        <!-- 箭头定义 -->
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#EF4444"></polygon>
+                            </marker>
+                        </defs>
+                    </div>
+                </div>
+                
+                <div class="ml-4 pl-4 border-l-4 border-primary">
+                    <p class="text-gray-800"><strong>（1）该碰撞过程中损失的机械能；</strong></p>
+                    <p class="text-gray-800 mt-2"><strong>（2）P从开始运动到静止经历的时间。</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 动图演示部分 -->
+        <section id="animation" class="mb-12 bg-white rounded-xl shadow-lg p-6 md:p-8">
+            <div class="flex items-center mb-6">
+                <div class="w-10 h-10 rounded-full bg-secondary text-white flex items-center justify-center mr-4">
+                    <i class="fa fa-film text-xl"></i>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-dark">动图演示</h3>
+            </div>
+            
+            <div class="relative w-full max-w-3xl mx-auto h-80 md:h-96 bg-gray-50 rounded-lg overflow-hidden border border-gray-200 mb-4">
+                <canvas id="physicsCanvas" class="w-full h-full"></canvas>
+            </div>
+            
+            <!-- 控制按钮 - 移到坐标系下方 -->
+            <div class="w-full max-w-3xl mx-auto flex justify-center items-center space-x-4 bg-white px-6 py-3 rounded-lg shadow-lg border border-gray-200 mb-24">
+                <button id="playBtn" class="text-primary hover:text-primary/80 transition-colors px-3 py-2 rounded bg-blue-50 hover:bg-blue-100">
+                    <i class="fa fa-play text-lg"></i>
+                    <span class="ml-1 text-sm">播放</span>
+                </button>
+                <button id="resetBtn" class="text-gray-600 hover:text-gray-800 transition-colors px-3 py-2 rounded bg-gray-50 hover:bg-gray-100">
+                    <i class="fa fa-refresh text-lg"></i>
+                    <span class="ml-1 text-sm">重置</span>
+                </button>
+                <div class="h-4 border-l border-gray-300 mx-2"></div>
+                <button id="zoomInBtn" class="text-gray-600 hover:text-gray-800 transition-colors px-3 py-2 rounded bg-gray-50 hover:bg-gray-100" title="放大">
+                    <i class="fa fa-search-plus text-lg"></i>
+                    <span class="ml-1 text-sm">放大</span>
+                </button>
+                <button id="zoomOutBtn" class="text-gray-600 hover:text-gray-800 transition-colors px-3 py-2 rounded bg-gray-50 hover:bg-gray-100" title="缩小">
+                    <i class="fa fa-search-minus text-lg"></i>
+                    <span class="ml-1 text-sm">缩小</span>
+                </button>
+                <button id="zoomResetBtn" class="text-gray-600 hover:text-gray-800 transition-colors px-3 py-2 rounded bg-gray-50 hover:bg-gray-100" title="重置缩放">
+                    <i class="fa fa-compress text-lg"></i>
+                    <span class="ml-1 text-sm">重置</span>
+                </button>
+            </div>
+            
+            <div class="mt-4 text-sm text-gray-600 italic text-center">
+                点击播放按钮观看碰撞和滑动过程的动画演示，动画将在关键步骤自动暂停
+            </div>
+
+            <!-- 步骤控制面板 -->
+            <div class="mt-6 bg-light rounded-lg overflow-hidden">
+                <div class="flex items-center justify-between p-4 border-b border-gray-200 cursor-pointer hover:bg-gray-50 transition-colors" id="stepsPanelToggle">
+                    <h4 class="text-lg font-semibold text-dark">解题步骤进度</h4>
+                    <i class="fa fa-chevron-down text-gray-600 transition-transform duration-300" id="stepsPanelIcon"></i>
+                </div>
+
+                <div class="p-4" id="stepsPanelContent">
+
+                <!-- 进度条 -->
+                <div class="mb-4">
+                    <div class="flex justify-between text-sm text-gray-600 mb-2">
+                        <span>动画进度</span>
+                        <span id="stepName">准备就绪</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div id="progressBar" class="bg-primary h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- 步骤列表 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    <div class="space-y-2" id="stepsList">
+                        <!-- 步骤将通过JavaScript动态生成 -->
+                    </div>
+                </div>
+
+                <!-- 当前步骤描述 -->
+                <div class="mt-4 p-3 bg-white rounded-lg border-l-4 border-primary">
+                    <h5 class="font-semibold text-primary mb-1">当前步骤说明</h5>
+                    <p id="stepDescription" class="text-gray-700 text-sm">点击播放按钮开始动画演示</p>
+                </div>
+
+                    </div>
+            </div>
+            
+            <!-- 播放速度控制 -->
+            <div class="mt-6 bg-light rounded-lg p-4">
+                <h5 class="text-primary font-medium mb-2">播放速度控制</h5>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-600">0.01x</span>
+                    <input type="range" id="speedSlider" min="0.01" max="0.2" step="0.01" value="0.05"
+                           class="flex-1 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider">
+                    <span class="text-sm text-gray-600">0.2x</span>
+                    <span id="speedValue" class="text-sm font-semibold text-primary bg-light px-2 py-1 rounded">0.05x</span>
+                </div>
+            </div>
+        </section>
+
+          <!-- 答案解析部分 -->
+        <section id="solution" class="mb-12 bg-white rounded-xl shadow-lg p-6 md:p-8">
+            <div class="flex items-center mb-6">
+                <div class="w-10 h-10 rounded-full bg-success text-white flex items-center justify-center mr-4">
+                    <i class="fa fa-check-circle text-xl"></i>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-dark">答案解析</h3>
+            </div>
+
+            <div class="space-y-8">
+                <!-- 问题1解析 -->
+                <div class="border-l-4 border-primary pl-5 py-2">
+                    <h4 class="text-lg font-semibold text-dark mb-4">（1）碰撞过程中损失的机械能</h4>
+
+                    <div class="space-y-4">
+                        <div class="bg-light p-4 rounded-lg">
+                            <h5 class="font-semibold text-dark mb-2">步骤1：应用动量守恒定律求碰撞后Q的速度</h5>
+                            <p class="text-gray-700">
+                                碰撞前：P静止，v₁₀ = 0；Q的速度v₂₀ = 7m/s<br>
+                                碰撞后：P的速度v₁ = 7m/s；设Q的速度为v₂
+                            </p>
+                            <div class="mt-2 bg-white p-3 rounded text-center font-semibold text-dark">
+                                m₁v₁₀ + m₂v₂₀ = m₁v₁ + m₂v₂<br>
+                                0 + 4×7 = 2×7 + 4v₂<br>
+                                v₂ = (28 - 14)/4 = 3.5 m/s
+                            </div>
+                        </div>
+
+                        <div class="bg-light p-4 rounded-lg">
+                            <h5 class="font-semibold text-dark mb-2">步骤2：计算碰撞前后的总动能</h5>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                                <div class="bg-white p-3 rounded">
+                                    <p class="font-medium text-center text-dark">碰撞前总动能</p>
+                                    <p class="text-center text-gray-700">
+                                        E前 = 1/2 m₁v₁₀² + 1/2 m₂v₂₀²<br>
+                                        E前 = 0 + 1/2×4×7² = 98 J
+                                    </p>
+                                </div>
+                                <div class="bg-white p-3 rounded">
+                                    <p class="font-medium text-center text-dark">碰撞后总动能</p>
+                                    <p class="text-center text-gray-700">
+                                        E后 = 1/2 m₁v₁² + 1/2 m₂v₂²<br>
+                                        E后 = 1/2×2×7² + 1/2×4×3.5²<br>
+                                        E后 = 49 + 24.5 = 73.5 J
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-light p-4 rounded-lg">
+                            <h5 class="font-semibold text-dark mb-2">步骤3：计算损失的机械能</h5>
+                            <div class="mt-2 bg-white p-3 rounded text-center font-semibold text-dark">
+                                ΔE = E前 - E后 = 98 - 73.5 = 24.5 J
+                            </div>
+                            <div class="mt-3 text-center font-bold text-primary">
+                                所以，碰撞过程中损失的机械能为24.5 J
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 问题2解析 -->
+                <div class="border-l-4 border-danger pl-5 py-2">
+                    <h4 class="text-lg font-semibold text-dark mb-4">（2）P从开始运动到静止经历的时间</h4>
+
+                    <div class="space-y-4">
+                        <div class="bg-light p-4 rounded-lg">
+                            <h5 class="font-semibold text-dark mb-2">步骤1：分析P的运动过程</h5>
+                            <p class="text-gray-700">
+                                P从静止开始，碰撞后以v=7m/s的速度向右运动，会交替经过光滑区域和防滑带区域：
+                                <ul class="list-disc list-inside mt-2 space-y-1 text-gray-700">
+                                    <li>在光滑区域做匀速直线运动</li>
+                                    <li>在防滑带上做匀减速直线运动，加速度a = -μg = -5m/s²</li>
+                                </ul>
+                            </p>
+                        </div>
+
+                        <div class="bg-light p-4 rounded-lg">
+                            <h5 class="font-semibold text-dark mb-2">步骤2：计算P在各段的运动时间</h5>
+                            <p class="text-gray-700 mb-3">首先判断P能滑过多少个防滑带：</p>
+
+                            <div class="space-y-3">
+                                <div class="bg-white p-3 rounded">
+                                    <p class="font-medium text-dark">第一段防滑带（l₂=2.4m）</p>
+                                    <p class="text-gray-700">
+                                        进入第一段防滑带前速度v₀ = 7m/s<br>
+                                        在防滑带上的加速度a = -5m/s²<br>
+                                        通过防滑带后的速度v₁：
+                                    </p>
+                                    <div class="text-center font-semibold text-dark">
+                                        v₁² = v₀² + 2al₂<br>
+                                        v₁² = 49 + 2×(-5)×2.4 = 49 - 24 = 25<br>
+                                        v₁ = 5 m/s
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded">
+                                    <p class="font-medium text-dark">第一段光滑区域（l₁=3m）</p>
+                                    <p class="text-gray-700">
+                                        匀速运动时间t₁'：
+                                    </p>
+                                    <div class="text-center font-semibold text-dark">
+                                        t₁' = l₁ / v₁ = 3 / 5 = 0.6 s
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded">
+                                    <p class="font-medium text-dark">第二段防滑带（l₂=2.4m）</p>
+                                    <p class="text-gray-700">
+                                        进入第二段防滑带速度v₁ = 5m/s<br>
+                                        通过后的速度v₂：
+                                    </p>
+                                    <div class="text-center font-semibold text-dark">
+                                        v₂² = v₁² + 2al₂ = 25 + 2×(-5)×2.4 = 25 - 24 = 1<br>
+                                        v₂ = 1 m/s
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded">
+                                    <p class="font-medium text-dark">第二段光滑区域（l₁=3m）</p>
+                                    <p class="text-gray-700">
+                                        匀速运动时间t₂'：
+                                    </p>
+                                    <div class="text-center font-semibold text-dark">
+                                        t₂' = l₁ / v₂ = 3 / 1 = 3 s
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded">
+                                    <p class="font-medium text-dark">第三段防滑带</p>
+                                    <p class="text-gray-700">
+                                        进入第三段防滑带速度v₂ = 1m/s<br>
+                                        设P在第三段防滑带上滑行s后停止，此时v=0：
+                                    </p>
+                                    <div class="text-center font-semibold text-dark">
+                                        0² = v₂² + 2as<br>
+                                        0 = 1 + 2×(-5)s<br>
+                                        s = 1/10 = 0.1 m &lt; 2.4m，所以P在第三段防滑带上停止
+                                    </div>
+                                    <p class="text-gray-700 mt-2">
+                                        在第三段防滑带上的运动时间t₃：
+                                    </p>
+                                    <div class="text-center font-semibold text-dark">
+                                        t₃ = (0 - v₂)/a = (0 - 1)/(-5) = 0.2 s
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-light p-4 rounded-lg">
+                            <h5 class="font-semibold text-dark mb-2">步骤3：计算防滑带上的运动时间</h5>
+                            <div class="space-y-2">
+                                <div class="bg-white p-3 rounded">
+                                    <p class="text-gray-700">
+                                        第一段防滑带时间t₁：
+                                    </p>
+                                    <div class="text-center font-semibold text-dark">
+                                        t₁ = (v₁ - v₀)/a = (5 - 7)/(-5) = 0.4 s
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-3 rounded">
+                                    <p class="text-gray-700">
+                                        第二段防滑带时间t₂：
+                                    </p>
+                                    <div class="text-center font-semibold text-dark">
+                                        t₂ = (v₂ - v₁)/a = (1 - 5)/(-5) = 0.8 s
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-light p-4 rounded-lg">
+                            <h5 class="font-semibold text-dark mb-2">步骤4：总时间计算</h5>
+                            <div class="mt-2 bg-white p-3 rounded text-center font-semibold text-dark">
+                                t总 = t₁ + t₁' + t₂ + t₂' + t₃<br>
+                                t总 = 0.4 + 0.6 + 0.8 + 3 + 0.2 = 5.0 s
+                            </div>
+                            <div class="mt-3 text-center font-bold text-primary">
+                                所以，P从开始运动到静止经历的时间为5.0秒
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 知识点讲解部分 -->
+        <section id="knowledge" class="mb-12 bg-white rounded-xl shadow-lg p-6 md:p-8">
+            <div class="flex items-center mb-6">
+                <div class="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center mr-4">
+                    <i class="fa fa-lightbulb-o text-xl"></i>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-dark">知识点讲解</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 知识点卡片1 -->
+                <div class="bg-light rounded-lg p-5 border-l-4 border-primary card-hover">
+                    <h4 class="text-lg font-semibold text-dark mb-3 flex items-center">
+                        <i class="fa fa-cogs mr-2 text-primary"></i>
+                        动量守恒定律
+                    </h4>
+                    <p class="text-gray-700">
+                        当系统不受外力或所受合外力为零时，系统的总动量保持不变。公式：
+                    </p>
+                    <div class="bg-white p-3 rounded mt-2 text-center font-semibold text-dark">
+                        m₁v₁ + m₂v₂ = m₁v₁' + m₂v₂'
+                    </div>
+                    <p class="mt-3 text-gray-600 text-sm">
+                        本题中，碰撞过程时间极短，可以认为在碰撞过程中摩擦力的冲量远小于碰撞力的冲量，因此碰撞过程动量守恒。
+                    </p>
+                </div>
+
+                <!-- 知识点卡片2 -->
+                <div class="bg-light rounded-lg p-5 border-l-4 border-warning card-hover">
+                    <h4 class="text-lg font-semibold text-dark mb-3 flex items-center">
+                        <i class="fa fa-fire mr-2 text-warning"></i>
+                        机械能损失计算
+                    </h4>
+                    <p class="text-gray-700">
+                        非弹性碰撞过程中机械能不守恒，损失的机械能等于碰撞前后系统动能的差值：
+                    </p>
+                    <div class="bg-white p-3 rounded mt-2 text-center font-semibold text-dark">
+                        ΔE = E前 - E后 = (1/2 m₁v₁² + 1/2 m₂v₂²) - (1/2 m₁v₁'² + 1/2 m₂v₂'²)
+                    </div>
+                    <p class="mt-3 text-gray-600 text-sm">
+                        碰撞过程中的能量损失主要转化为内能、声能等其他形式的能量。
+                    </p>
+                </div>
+
+                <!-- 知识点卡片3 -->
+                <div class="bg-light rounded-lg p-5 border-l-4 border-success card-hover">
+                    <h4 class="text-lg font-semibold text-dark mb-3 flex items-center">
+                        <i class="fa fa-arrows-alt mr-2 text-success"></i>
+                        牛顿第二定律与摩擦力
+                    </h4>
+                    <p class="text-gray-700">
+                        物体在粗糙表面滑动时，受到的滑动摩擦力大小为：
+                    </p>
+                    <div class="bg-white p-3 rounded mt-2 text-center font-semibold text-dark">
+                        f = μN = μmg
+                    </div>
+                    <p class="mt-3 text-gray-600 text-sm">
+                        根据牛顿第二定律，物体的加速度大小为：a = f/m = μg
+                    </p>
+                </div>
+
+                <!-- 知识点卡片4 -->
+                <div class="bg-light rounded-lg p-5 border-l-4 border-danger card-hover">
+                    <h4 class="text-lg font-semibold text-dark mb-3 flex items-center">
+                        <i class="fa fa-clock-o mr-2 text-danger"></i>
+                        运动学公式
+                    </h4>
+                    <p class="text-gray-700">
+                        匀变速直线运动的基本公式：
+                    </p>
+                    <div class="bg-white p-3 rounded mt-2 text-center font-semibold text-dark space-y-1">
+                        <div>v = v₀ + at</div>
+                        <div>s = v₀t + 1/2 at²</div>
+                        <div>v² - v₀² = 2as</div>
+                    </div>
+                    <p class="mt-3 text-gray-600 text-sm">
+                        本题中，物体在防滑带上做匀减速直线运动，可以应用这些公式计算运动时间和位移。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 类似题目部分 -->
+        <section id="similar" class="mb-12 bg-white rounded-xl shadow-lg p-6 md:p-8">
+            <div class="flex items-center mb-6">
+                <div class="w-10 h-10 rounded-full bg-warning text-white flex items-center justify-center mr-4">
+                    <i class="fa fa-clone text-xl"></i>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-dark">类似题目</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 类似题目1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm card-hover">
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full font-medium">动量守恒</span>
+                            <span class="text-gray-500 text-sm">难度：中等</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-dark mb-3">碰撞后运动分析</h4>
+                        <p class="text-gray-700 text-sm mb-4">
+                            在光滑水平面上，质量为m₁的物块以速度v₀与静止的质量为m₂的物块发生正碰，已知碰撞后两物块的速度分别为v₁和v₂，求：
+                        </p>
+                        <ul class="list-disc list-inside text-gray-700 text-sm space-y-1 mb-4">
+                            <li>两物块的速度v₁和v₂</li>
+                            <li>碰撞过程中损失的机械能</li>
+                            <li>若两物块与地面的动摩擦因数为μ，求它们停止时的距离</li>
+                        </ul>
+                        <button class="bg-primary text-white px-4 py-2 rounded hover:bg-primary/90 transition-colors text-sm w-full md:w-auto">
+                            查看解析 <i class="fa fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 类似题目2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm card-hover">
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-warning/10 text-warning text-xs px-2 py-1 rounded-full font-medium">摩擦力</span>
+                            <span class="text-gray-500 text-sm">难度：中等</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-dark mb-3">分段摩擦问题</h4>
+                        <p class="text-gray-700 text-sm mb-4">
+                            水平面上有一质量为m的物体，以初速度v₀开始运动，物体与第一段水平面的动摩擦因数为μ₁，长度为L₁，与第二段水平面的动摩擦因数为μ₂，求：
+                        </p>
+                        <ul class="list-disc list-inside text-gray-700 text-sm space-y-1 mb-4">
+                            <li>物体滑过第一段后的速度</li>
+                            <li>若物体最终在第二段停止，求第二段的长度</li>
+                            <li>物体从开始到停止的总时间</li>
+                        </ul>
+                        <button class="bg-primary text-white px-4 py-2 rounded hover:bg-primary/90 transition-colors text-sm w-full md:w-auto">
+                            查看解析 <i class="fa fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 类似题目3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm card-hover">
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-success/10 text-success text-xs px-2 py-1 rounded-full font-medium">综合应用</span>
+                            <span class="text-gray-500 text-sm">难度：较高</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-dark mb-3">多物体碰撞与摩擦</h4>
+                        <p class="text-gray-700 text-sm mb-4">
+                            三个质量分别为m₁、m₂、m₃的物块静止在光滑水平面上，质量为m₀的物块以速度v₀碰撞m₁，之后发生一系列碰撞，已知所有碰撞均为正碰，求：
+                        </p>
+                        <ul class="list-disc list-inside text-gray-700 text-sm space-y-1 mb-4">
+                            <li>最终各物块的速度</li>
+                            <li>系统损失的总机械能</li>
+                            <li>若地面有摩擦，分析各物块的运动情况</li>
+                        </ul>
+                        <button class="bg-primary text-white px-4 py-2 rounded hover:bg-primary/90 transition-colors text-sm w-full md:w-auto">
+                            查看解析 <i class="fa fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 类似题目4 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm card-hover">
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-accent/10 text-accent text-xs px-2 py-1 rounded-full font-medium">能量转化</span>
+                            <span class="text-gray-500 text-sm">难度：中等</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-dark mb-3">能量守恒应用</h4>
+                        <p class="text-gray-700 text-sm mb-4">
+                            质量为m的小球从高度h处由静止释放，与地面发生碰撞后反弹，已知碰撞过程损失的机械能为ΔE，小球与地面的动摩擦因数为μ，求：
+                        </p>
+                        <ul class="list-disc list-inside text-gray-700 text-sm space-y-1 mb-4">
+                            <li>小球第一次反弹的高度</li>
+                            <li>小球最终停止时通过的总路程</li>
+                            <li>整个过程中重力做功和摩擦力做功</li>
+                        </ul>
+                        <button class="bg-primary text-white px-4 py-2 rounded hover:bg-primary/90 transition-colors text-sm w-full md:w-auto">
+                            查看解析 <i class="fa fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa fa-book text-primary text-2xl"></i>
+                        <h2 class="text-xl font-bold">郑州创新科技中等专业学校</h2>
+                    </div>
+                    <p class="text-gray-400 text-sm mt-2">
+                        物理教学辅助系统 - 帮助学生更好地理解物理概念
+                    </p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa fa-question-circle text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa fa-envelope text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fa fa-phone text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-6 pt-6 text-center text-gray-500 text-sm">
+                <p>© 2023 郑州创新科技中等专业学校. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2', 'shadow-lg');
+                header.classList.remove('py-3', 'shadow-md');
+            } else {
+                header.classList.add('py-3', 'shadow-md');
+                header.classList.remove('py-2', 'shadow-lg');
+            }
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 物理动画模拟 - 修复版
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('动画系统初始化...');
+
+            // 确保所有必需的元素都存在
+            const canvas = document.getElementById('physicsCanvas');
+            if (!canvas) {
+                console.error('无法找到canvas元素');
+                return;
+            }
+            const ctx = canvas.getContext('2d');
+            if (!ctx) {
+                console.error('无法获取canvas上下文');
+                return;
+            }
+            const playBtn = document.getElementById('playBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const statusText = document.getElementById('statusText');
+
+            // 检查控制按钮是否存在
+            if (!playBtn) {
+                console.error('无法找到播放按钮');
+                return;
+            }
+            if (!resetBtn) {
+                console.error('无法找到重置按钮');
+                return;
+            }
+            if (!statusText) {
+                console.warn('无法找到状态文本元素（可选）');
+            }
+
+            console.log('所有必需元素已找到，继续初始化...');
+            
+            // 播放速度控制
+            
+            // 速度控制
+            const speedSlider = document.getElementById('speedSlider');
+            const speedValue = document.getElementById('speedValue');
+
+            // 步骤控制元素
+            const stepNameElement = document.getElementById('stepName');
+            const stepDescriptionElement = document.getElementById('stepDescription');
+            const progressBarElement = document.getElementById('progressBar');
+            const stepsListElement = document.getElementById('stepsList');
+            const prevStepBtn = document.getElementById('prevStepBtn');
+            const nextStepBtn = document.getElementById('nextStepBtn');
+
+            // 缩放控制元素
+            const zoomInBtn = document.getElementById('zoomInBtn');
+            const zoomOutBtn = document.getElementById('zoomOutBtn');
+            const zoomResetBtn = document.getElementById('zoomResetBtn');
+            const zoomLevelText = document.getElementById('zoomLevelText');
+
+            console.log('动画初始化开始');
+
+            // 设置Canvas尺寸为固定值，确保动画稳定运行
+            function setupCanvas() {
+                canvas.width = 800; // 固定宽度
+                canvas.height = 200; // 固定高度
+                canvas.style.display = 'block';
+                canvas.style.margin = '0 auto';
+                console.log('Canvas尺寸已设置为:', canvas.width, 'x', canvas.height);
+            }
+
+            // 立即设置Canvas尺寸
+            setupCanvas();
+            
+            // 添加窗口大小改变时的处理
+            window.addEventListener('resize', draw);
+
+            // 物理参数 - 严格按照题目数据
+            const m1 = 2; // kg, P的质量
+            const m2 = 4; // kg, Q的质量
+            const v0 = 7; // m/s, Q的初速度
+            const v1_after = 7; // m/s, P碰撞后的速度
+            const v2_after = 3.5; // m/s, Q碰撞后的速度
+            const mu = 0.5; // 动摩擦因数
+            const g = 10; // m/s², 重力加速度
+            const l1 = 3; // m, 防滑带间隔
+            const l2 = 2.4; // m, 防滑带宽度
+            const a_friction = -mu * g; // m/s², 摩擦加速度
+
+            // 动画参数
+            let animationId = null;
+            let isPlaying = false;
+            let time = 0;
+            let dt = 0.02; // 时间步长
+            let baseScale = 38.4; // 基础像素/米的比例尺（60 * 0.8 * 0.8）
+            let scale = baseScale; // 当前像素/米的比例尺
+            let speedMultiplier = 0.05; // 播放速度倍数 - 大幅减小速度
+            let zoomLevel = 1.0; // 缩放级别
+
+            // 缩放参数
+            const zoomInFactor = 1.2;
+            const zoomOutFactor = 0.8;
+            const minZoom = 0.3;
+            const maxZoom = 3.0;
+
+            // 步骤控制系统 - 重新设计，确保动图连贯、与题目对应
+            const animationSteps = [
+                // 动态步骤1：Q从左侧接近P
+                { name: 'Q接近P', description: 'Q以7m/s从左侧接近静止的P（3m处）', isPaused: true, isStatic: false },
+
+                // 静态步骤2：碰撞瞬间
+                { name: '碰撞瞬间', description: 'Q与P在3m位置发生完全弹性碰撞', isPaused: true, isStatic: true },
+
+                // 静态步骤3：碰撞后的速度状态
+                { name: '碰撞后', description: '碰撞后：P获得7m/s向右，Q保持3.5m/s向右', isPaused: true, isStatic: true },
+
+                // 动态步骤4：P在第一段防滑带减速运动
+                { name: 'P第一段防滑带减速', description: 'P在3m-5.4m第一段防滑带中以a=-5m/s²减速至5m/s', isPaused: true, isStatic: false },
+
+                // 静态步骤5：P滑出第一段防滑带
+                { name: 'P滑出第一段', description: 'P到达5.4m处，速度减为5m/s', isPaused: true, isStatic: true },
+
+                // 动态步骤6：P在第一段光滑区域匀速运动
+                { name: 'P第一段光滑区运动', description: 'P在5.4m-8.4m光滑区域以5m/s匀速运动', isPaused: true, isStatic: false },
+
+                // 静态步骤7：P到达第二段防滑带入口
+                { name: 'P到达第二段入口', description: 'P到达8.4m处，准备进入第二段防滑带', isPaused: true, isStatic: true },
+
+                // 动态步骤8：P在第二段防滑带减速运动
+                { name: 'P第二段防滑带减速', description: 'P在8.4m-10.8m第二段防滑带中减速至1m/s', isPaused: true, isStatic: false },
+
+                // 静态步骤9：P滑出第二段防滑带
+                { name: 'P滑出第二段', description: 'P到达10.8m处，速度减为1m/s', isPaused: true, isStatic: true },
+
+                // 动态步骤10：P在第二段光滑区域匀速运动
+                { name: 'P第二段光滑区运动', description: 'P在10.8m-13.8m光滑区域以1m/s匀速运动', isPaused: true, isStatic: false },
+
+                // 静态步骤11：P到达第三段防滑带入口
+                { name: 'P到达第三段入口', description: 'P到达13.8m处，准备进入第三段防滑带', isPaused: true, isStatic: true },
+
+                // 动态步骤12：P在第三段防滑带减速至停止
+                { name: 'P第三段防滑带减速', description: 'P在13.8m-16.2m第三段防滑带中减速至停止', isPaused: true, isStatic: false },
+
+                // 静态步骤13：P最终停止
+                { name: 'P最终停止', description: 'P在第三段防滑带中完全停止', isPaused: true, isStatic: true }
+            ];
+
+            let currentStep = 0;
+            let stepProgress = 0;
+            
+            // 物体状态 - 按照题目数据设置初始位置和尺寸
+            const padding = 40; // 内边距
+
+            // 逻辑位置（以米为单位）
+            let p = {
+                x: 3, // 3米位置，对应第一段防滑带开始位置
+                v: 0, // 初始静止
+                a: 0, // 加速度
+                width: 30, // 物块尺寸（像素）
+                height: 40,
+                color: '#F59E0B'
+            };
+
+            let q = {
+                x: 1, // 1米位置，确保在坐标系范围内且能碰撞到P
+                v: v0, // 7m/s
+                a: 0, // 加速度
+                width: 30, // 物块尺寸（像素）
+                height: 40,
+                color: '#3B82F6'
+            };
+            
+            let hasCollided = false;
+            let pStopped = false;
+            let qStopped = false;
+            
+            // 绘制坐标系
+            function drawCoordinateSystem() {
+                if (!ctx) return;
+
+                const padding = 40;
+                const xAxisY = canvas.height - 40;
+                const yAxisX = padding;
+
+                // 设置显示范围，根据缩放比例调整
+                const maxDistance = 22; // 由于缩放变小，增加显示范围到0-22米
+                const displayWidth = padding + maxDistance * scale;
+
+                // 绘制X轴
+                ctx.beginPath();
+                ctx.moveTo(yAxisX, xAxisY);
+                ctx.lineTo(displayWidth, xAxisY);
+                ctx.strokeStyle = '#374151';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                // 绘制Y轴
+                ctx.beginPath();
+                ctx.moveTo(yAxisX, xAxisY);
+                ctx.lineTo(yAxisX, padding);
+                ctx.strokeStyle = '#374151';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                // 绘制箭头
+                // X轴箭头
+                ctx.beginPath();
+                ctx.moveTo(displayWidth, xAxisY);
+                ctx.lineTo(displayWidth - 10, xAxisY - 5);
+                ctx.lineTo(displayWidth - 10, xAxisY + 5);
+                ctx.closePath();
+                ctx.fillStyle = '#374151';
+                ctx.fill();
+
+                // Y轴箭头
+                ctx.beginPath();
+                ctx.moveTo(yAxisX, padding);
+                ctx.lineTo(yAxisX - 5, padding + 10);
+                ctx.lineTo(yAxisX + 5, padding + 10);
+                ctx.closePath();
+                ctx.fillStyle = '#374151';
+                ctx.fill();
+
+                // 绘制刻度和标签
+                ctx.font = '12px Arial';
+                ctx.fillStyle = '#374151';
+                ctx.textAlign = 'center';
+
+                // X轴刻度（每1米一个刻度）
+                for (let i = 0; i <= maxDistance; i++) {
+                    const x = yAxisX + i * scale;
+                    if (x > displayWidth) break;
+
+                    // 刻度线
+                    ctx.beginPath();
+                    ctx.moveTo(x, xAxisY);
+                    ctx.lineTo(x, xAxisY + 5);
+                    ctx.stroke();
+
+                    // 刻度数字（每2个单位显示一个）
+                    if (i % 2 === 0) {
+                        ctx.fillText(i + 'm', x, xAxisY + 20);
+                    }
+                }
+
+                // Y轴刻度（速度刻度）
+                ctx.textAlign = 'right';
+                for (let v = 0; v <= 8; v += 2) {
+                    const y = xAxisY - v * scale / 2; // 速度比例缩放
+                    if (y < padding) break;
+
+                    // 刻度线
+                    ctx.beginPath();
+                    ctx.moveTo(yAxisX - 5, y);
+                    ctx.lineTo(yAxisX, y);
+                    ctx.stroke();
+
+                    // 刻度数字
+                    ctx.fillText(v + 'm/s', yAxisX - 10, y + 4);
+                }
+
+                // 坐标轴标签
+                ctx.font = '14px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('位置 (m)', displayWidth / 2, xAxisY + 35);
+
+                ctx.save();
+                ctx.translate(yAxisX - 25, canvas.height / 2);
+                ctx.rotate(-Math.PI / 2);
+                ctx.fillText('速度 (m/s)', 0, 0);
+                ctx.restore();
+            }
+
+            // 缩放功能
+            function zoomIn() {
+                if (zoomLevel < maxZoom) {
+                    zoomLevel *= zoomInFactor;
+                    updateScale();
+                    draw();
+                }
+            }
+
+            function zoomOut() {
+                if (zoomLevel > minZoom) {
+                    zoomLevel *= zoomOutFactor;
+                    updateScale();
+                    draw();
+                }
+            }
+
+            function zoomReset() {
+                zoomLevel = 1.0;
+                updateScale();
+                draw();
+            }
+
+            function updateScale() {
+                scale = baseScale * zoomLevel;
+                if (zoomLevelText) {
+                    zoomLevelText.textContent = Math.round(zoomLevel * 100) + '%';
+                }
+                console.log('缩放级别:', zoomLevel, '当前比例尺:', scale);
+            }
+
+            // 获取物块屏幕位置（考虑缩放）
+            function getScreenPosition(logicalPosition) {
+                return padding + logicalPosition * scale;
+            }
+
+            // 绘制函数
+            function draw() {
+                if (!ctx) return;
+
+                // 清空画布
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // 绘制坐标系
+                drawCoordinateSystem();
+
+                // 绘制地面（在坐标系的基础上）
+                const groundY = canvas.height - 40;
+                ctx.beginPath();
+                ctx.moveTo(0, groundY);
+                ctx.lineTo(canvas.width, groundY);
+                ctx.strokeStyle = '#6B7280';
+                ctx.lineWidth = 2;
+                ctx.setLineDash([5, 5]);
+                ctx.stroke();
+                ctx.setLineDash([]);
+                
+                // 绘制防滑带 - 严格按照题目数据
+                const padding = 40; // 内边距
+                const originX = padding; // 从坐标系原点开始绘制
+
+                // 题目中P的位置就是第一段防滑带的左边缘（3m）
+                // 第一段防滑带：3m - 5.4m
+                // 第二段防滑带：8.4m - 10.8m
+                // 第三段防滑带：13.8m - 16.2m
+
+                const frictionZones = [
+                    { start: 3, end: 5.4 },     // 第一段
+                    { start: 8.4, end: 10.8 },  // 第二段
+                    { start: 13.8, end: 16.2 }  // 第三段
+                ];
+
+                frictionZones.forEach(zone => {
+                    const x = originX + zone.start * scale;
+                    const width = (zone.end - zone.start) * scale;
+
+                    if (x < canvas.width) {
+                        // 防滑带
+                        ctx.fillStyle = 'rgba(251, 191, 36, 0.6)';
+                        ctx.fillRect(x, groundY - 8, width, 8);
+
+                        // 防滑带标签
+                        ctx.fillStyle = '#92400E';
+                        ctx.font = '10px Arial';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('防滑带', x + width/2, groundY - 12);
+                    }
+                });
+                
+                // 绘制物块P
+                const pScreenX = getScreenPosition(p.x);
+                ctx.fillStyle = p.color;
+                ctx.fillRect(pScreenX, groundY - p.height, p.width, p.height);
+                ctx.fillStyle = 'white';
+                ctx.font = 'bold 14px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('P', pScreenX + p.width/2, groundY - p.height/2 + 5);
+
+                // 绘制物块Q
+                const qScreenX = getScreenPosition(q.x);
+                ctx.fillStyle = q.color;
+                ctx.fillRect(qScreenX, groundY - q.height, q.width, q.height);
+                ctx.fillStyle = 'white';
+                ctx.fillText('Q', qScreenX + q.width/2, groundY - q.height/2 + 5);
+                
+                // 绘制速度矢量
+                if (p.v !== 0 && !pStopped) {
+                    drawVelocityVector(pScreenX + p.width, groundY - p.height/2, p.v / 4);
+                }
+
+                if (q.v !== 0 && !qStopped) {
+                    drawVelocityVector(qScreenX + q.width, groundY - q.height/2, q.v / 4);
+                }
+
+                // 绘制实时位置和速度信息
+                drawRealtimeInfo();
+            }
+
+            // 绘制实时位置和速度信息
+            function drawRealtimeInfo() {
+                if (!ctx) return;
+
+                const padding = 40;
+                const infoY = 20;
+                const groundY = canvas.height - 40;
+
+                // 重新计算物块的屏幕位置
+                const pScreenX = getScreenPosition(p.x);
+                const qScreenX = getScreenPosition(q.x);
+
+                // 设置信息框样式
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+                ctx.strokeStyle = '#165DFF';
+                ctx.lineWidth = 2;
+                ctx.setLineDash([]);
+
+                // 绘制P的信息框
+                const pInfoBoxWidth = 160;
+                const pInfoBoxHeight = 60;
+                const pInfoBoxX = padding;
+                const pInfoBoxY = infoY;
+
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+                ctx.fillRect(pInfoBoxX, pInfoBoxY, pInfoBoxWidth, pInfoBoxHeight);
+                ctx.strokeStyle = '#E5E7EB';
+                ctx.strokeRect(pInfoBoxX, pInfoBoxY, pInfoBoxWidth, pInfoBoxHeight);
+
+                // P的信息文本
+                ctx.fillStyle = '#F59E0B';
+                ctx.font = 'bold 12px Arial';
+                ctx.textAlign = 'left';
+                ctx.fillText('物块P', pInfoBoxX + 8, pInfoBoxY + 18);
+
+                ctx.fillStyle = '#374151';
+                ctx.font = '11px Arial';
+                // p.x和q.x现在是逻辑位置（米），无需转换
+                ctx.fillText(`位置: ${p.x.toFixed(2)}m`, pInfoBoxX + 8, pInfoBoxY + 35);
+                ctx.fillText(`速度: ${p.v.toFixed(2)}m/s`, pInfoBoxX + 8, pInfoBoxY + 50);
+
+                // 绘制Q的信息框
+                const qInfoBoxWidth = 160;
+                const qInfoBoxHeight = 60;
+                const qInfoBoxX = padding + pInfoBoxWidth + 10;
+                const qInfoBoxY = infoY;
+
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+                ctx.fillRect(qInfoBoxX, qInfoBoxY, qInfoBoxWidth, qInfoBoxHeight);
+                ctx.strokeStyle = '#E5E7EB';
+                ctx.strokeRect(qInfoBoxX, qInfoBoxY, qInfoBoxWidth, qInfoBoxHeight);
+
+                // Q的信息文本
+                ctx.fillStyle = '#3B82F6';
+                ctx.font = 'bold 12px Arial';
+                ctx.textAlign = 'left';
+                ctx.fillText('物块Q', qInfoBoxX + 8, qInfoBoxY + 18);
+
+                ctx.fillStyle = '#374151';
+                ctx.font = '11px Arial';
+                // q.x和q.v现在是逻辑位置和速度（米，米/秒）
+                ctx.fillText(`位置: ${q.x.toFixed(2)}m`, qInfoBoxX + 8, qInfoBoxY + 35);
+                ctx.fillText(`速度: ${q.v.toFixed(2)}m/s`, qInfoBoxX + 8, qInfoBoxY + 50);
+
+                // 系统状态框框已删除
+
+              }
+            
+            // 绘制速度矢量
+            function drawVelocityVector(x, y, length) {
+                if (!ctx) return;
+                
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                ctx.lineTo(x + length, y);
+                ctx.strokeStyle = '#EF4444';
+                ctx.lineWidth = 3;
+                ctx.stroke();
+                
+                // 箭头
+                const headLength = 8;
+                const angle = Math.atan2(0, length);
+                ctx.beginPath();
+                ctx.moveTo(x + length, y);
+                ctx.lineTo(x + length - headLength * Math.cos(angle - Math.PI/6), 
+                           y - headLength * Math.sin(angle - Math.PI/6));
+                ctx.moveTo(x + length, y);
+                ctx.lineTo(x + length - headLength * Math.cos(angle + Math.PI/6), 
+                           y - headLength * Math.sin(angle + Math.PI/6));
+                ctx.stroke();
+            }
+            
+            // 计算物体受到的摩擦力
+            function calculateForces() {
+                // 摩擦力 = μ * m * g
+                const pFriction = pStopped ? 0 : mu * m1 * g;
+                const qFriction = qStopped ? 0 : mu * m2 * g;
+                
+                return { pFriction, qFriction };
+            }
+            
+            // 播放速度控制已保留
+            
+        // 初始化步骤列表显示
+            function initializeStepsList() {
+                if (!stepsListElement) return;
+
+                stepsListElement.innerHTML = '';
+                animationSteps.forEach((step, index) => {
+                    const stepDiv = document.createElement('div');
+                    stepDiv.className = 'flex items-center space-x-2 p-2 rounded-lg cursor-pointer transition-colors ' +
+                                      (index === currentStep ? 'bg-primary text-white' : 'bg-white hover:bg-gray-100');
+                    stepDiv.id = `step-${index}`;
+
+                    const stepNumber = document.createElement('div');
+                    stepNumber.className = 'w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ' +
+                                         (index === currentStep ? 'bg-white text-primary' : 'bg-gray-200 text-gray-600');
+                    stepNumber.textContent = index + 1;
+
+                    const stepInfo = document.createElement('div');
+                    stepInfo.className = 'flex-1';
+                    stepInfo.innerHTML = `<div class="font-medium text-sm">${step.name}</div>
+                                         <div class="text-xs opacity-75">${step.description}</div>`;
+
+                    stepDiv.appendChild(stepNumber);
+                    stepDiv.appendChild(stepInfo);
+
+                    stepDiv.addEventListener('click', () => {
+                        if (index < currentStep || !animationSteps[currentStep].isPaused) {
+                            goToStep(index);
+                        }
+                    });
+
+                    stepsListElement.appendChild(stepDiv);
+                });
+            }
+
+            // 更新步骤显示
+            function updateStepDisplay() {
+                if (!stepNameElement || !stepDescriptionElement || !progressBarElement) return;
+
+                const step = animationSteps[currentStep];
+                stepNameElement.textContent = step.name;
+                stepDescriptionElement.textContent = step.description;
+
+                const progress = (currentStep / (animationSteps.length - 1)) * 100;
+                progressBarElement.style.width = `${progress}%`;
+
+                // 更新步骤列表样式
+                document.querySelectorAll('[id^="step-"]').forEach((element, index) => {
+                    if (index === currentStep) {
+                        element.className = 'flex items-center space-x-2 p-2 rounded-lg cursor-pointer transition-colors bg-primary text-white';
+                        element.querySelector('.w-6').className = 'w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bg-white text-primary';
+                    } else if (index < currentStep) {
+                        element.className = 'flex items-center space-x-2 p-2 rounded-lg cursor-pointer transition-colors bg-gray-100';
+                        element.querySelector('.w-6').className = 'w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bg-success text-white';
+                    } else {
+                        element.className = 'flex items-center space-x-2 p-2 rounded-lg cursor-pointer transition-colors bg-white hover:bg-gray-100';
+                        element.querySelector('.w-6').className = 'w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bg-gray-200 text-gray-600';
+                    }
+                });
+
+                // 更新按钮状态
+                if (prevStepBtn) {
+                    prevStepBtn.disabled = currentStep === 0;
+                }
+                if (nextStepBtn) {
+                    nextStepBtn.disabled = currentStep >= animationSteps.length - 1;
+                }
+            }
+
+            // 跳转到指定步骤
+            function goToStep(stepIndex) {
+                if (stepIndex < 0 || stepIndex >= animationSteps.length) return;
+
+                currentStep = stepIndex;
+                updateStepDisplay();
+
+                // 如果需要，重置动画状态到该步骤的开始
+                resetToStep(currentStep);
+                draw();
+            }
+
+            // 重置到指定步骤状态 - 重新设计，确保物理逻辑连贯
+            function resetToStep(stepIndex) {
+                switch(stepIndex) {
+                    case 0: // Q接近P - Q以7m/s从左侧接近静止的P（动态）
+                        hasCollided = false;
+                        pStopped = false;
+                        qStopped = false;
+                        p.x = 3; // P静止在3m处（第一段防滑带开始处）
+                        p.v = 0; // P静止
+                        q.x = 2.5; // Q从2.5m处开始接近，便于观察
+                        q.v = v0; // Q以7m/s接近
+                        break;
+
+                    case 1: // 碰撞瞬间 - Q与P在3m位置发生完全弹性碰撞（静态）
+                        hasCollided = true;
+                        p.x = 3; // 碰撞位置
+                        p.v = 0; // 碰撞瞬间速度
+                        q.x = 2.5; // 从2.5m开始，避免跳跃
+                        q.v = 0; // 碰撞瞬间速度
+                        break;
+
+                    case 2: // 碰撞后 - 碰撞后：P获得7m/s向右，Q保持3.5m/s向右（静态）
+                        hasCollided = true;
+                        p.x = 3.0; // 从上一步结束位置（3.0m）开始
+                        p.v = v1_after; // P获得7m/s向右
+                        q.x = 2.5; // 从2.5m开始，避免跳跃
+                        q.v = v2_after; // Q保持3.5m/s向右
+                        break;
+
+                    case 3: // P第一段防滑带减速 - P在3m-5.4m第一段防滑带中减速至5m/s（动态）
+                        hasCollided = true;
+                        p.x = 3.0; // 从上一步结束位置（3.0m）开始
+                        p.v = v1_after; // P以7m/s开始减速
+                        q.x = 2.5; // 从2.5m开始，Q继续运动
+                        q.v = v2_after; // Q保持3.5m/s
+                        qStopped = false; // Q尚未停止
+                        break;
+
+                    case 4: // P滑出第一段 - P到达5.4m处，速度减为5m/s（静态）
+                        hasCollided = true;
+                        p.x = 5.4; // 第一段防滑带结束位置
+                        p.v = 5; // 根据v² = 7² + 2×(-5)×2.4 = 25，v=5m/s
+                        // Q在这个步骤中仍然在减速，还未完全停止
+                        qStopped = false; // Q尚未完全停止
+                        break;
+
+                    case 5: // P第一段光滑区运动 - P在5.4m-8.4m光滑区域以5m/s匀速运动（动态）
+                        hasCollided = true;
+                        p.x = 5.4; // 从上一步结束位置（5.4m）开始
+                        p.v = 5; // P以5m/s匀速运动
+                        // 保留Q的当前状态，继续自然减速
+                        // 不要重置q.x，让它从之前的位置继续减速
+                        if (!qStopped) {
+                            // 如果Q还没停止，保持运动状态
+                        } else {
+                            // 如果已经停止，保持停止状态
+                            console.log('Q在步骤5开始时已停止在位置:', q.x.toFixed(3) + 'm');
+                        }
+                        break;
+
+                    case 6: // P到达第二段入口 - P到达8.4m处，准备进入第二段防滑带（静态）
+                        hasCollided = true;
+                        p.x = 8.4; // 从上一步结束位置（8.4m）开始
+                        p.v = 5; // P以5m/s到达
+                        // 在进入静态步骤时，检查Q是否已经停止
+                        if (!qStopped) {
+                            // 如果Q还没停止，让它继续减速直到停止位置
+                            console.log('Q在步骤6开始时仍在运动，位置:', q.x.toFixed(3) + 'm');
+                        } else {
+                            // 如果Q已经停止，确保它在正确位置
+                            q.x = 4.225; // 确保Q在正确的停止位置
+                        }
+                        q.v = 0; // Q停止
+                        qStopped = true; // Q停止标志
+                        break;
+
+                    case 7: // P第二段防滑带减速 - P在8.4m-10.8m第二段防滑带中减速至1m/s（动态）
+                        hasCollided = true;
+                        p.x = 8.4; // 刚进入第二段防滑带，避免位置跳跃
+                        p.v = 5; // P以5m/s开始减速
+                        q.x = 4.225; // Q保持在停止位置
+                        q.v = 0; // Q保持停止
+                        qStopped = true; // Q保持停止标志
+                        break;
+
+                    case 8: // P滑出第二段 - P到达10.8m处，速度减为1m/s（静态）
+                        hasCollided = true;
+                        p.x = 10.8; // 从上一步结束位置（10.8m）开始
+                        p.v = 1; // 根据v² = 5² + 2×(-5)×2.4 = 1，v=1m/s
+                        q.x = 4.225; // Q保持在停止位置
+                        q.v = 0; // Q保持停止
+                        qStopped = true; // Q保持停止标志
+                        break;
+
+                    case 9: // P第二段光滑区运动 - P在10.8m-13.8m光滑区域以1m/s匀速运动（动态）
+                        hasCollided = true;
+                        p.x = 10.8; // 在第二段光滑区域开始
+                        p.v = 1; // P以1m/s匀速运动
+                        q.x = 4.225; // Q保持在停止位置
+                        q.v = 0; // Q保持停止
+                        qStopped = true; // Q保持停止标志
+                        break;
+
+                    case 10: // P到达第三段入口 - P到达13.8m处，准备进入第三段防滑带（静态）
+                        hasCollided = true;
+                        p.x = 13.8; // 从上一步结束位置（13.8m）开始
+                        p.v = 1; // P以1m/s到达
+                        q.x = 4.225; // Q保持在停止位置
+                        q.v = 0; // Q保持停止
+                        qStopped = true; // Q保持停止标志
+                        break;
+
+                    case 11: // P第三段防滑带减速 - P在13.8m-16.2m第三段防滑带中减速至停止（动态）
+                        hasCollided = true;
+                        p.x = 13.8; // 刚进入第三段防滑带，避免位置跳跃
+                        p.v = 1; // P以1m/s开始减速
+                        q.x = 4.225; // Q保持在停止位置
+                        q.v = 0; // Q保持停止
+                        qStopped = true; // Q保持停止标志
+                        break;
+
+                    case 12: // P最终停止 - P在第三段防滑带中完全停止（静态）
+                        hasCollided = true;
+                        pStopped = true;
+                        qStopped = true; // Q也保持停止状态
+                        p.x = 13.8; // 从上一步结束位置（13.8m）开始
+                        p.v = 0; // P停止
+                        q.x = 4.225; // Q保持在停止位置
+                        q.v = 0; // Q保持停止
+                        break;
+                }
+            }
+
+            // 检查是否应该进行到下一个步骤 - 简化逻辑，确保连贯性
+            function checkStepTransition() {
+                // 如果是手动切换步骤，暂时跳过自动检测
+                if (window.manualStepChange) {
+                    return;
+                }
+
+                const pRealPosition = p.x;
+                let shouldSwitch = false;
+                let nextStep = currentStep;
+
+                // 基于关键时刻进行步骤切换
+                switch(currentStep) {
+                    case 0: // Q接近P（动态）
+                        if (hasCollided) {
+                            nextStep = 1; // 切换到碰撞瞬间
+                            shouldSwitch = true;
+                        }
+                        break;
+
+                    case 1: // 碰撞瞬间（静态）
+                    case 2: // 碰撞后（静态）
+                        // 这两个静态步骤需要手动点击播放按钮切换
+                        break;
+
+                    case 3: // P第一段防滑带减速（动态）
+                        if (pRealPosition >= 5.4) {
+                            nextStep = 4; // 切换到滑出第一段
+                            shouldSwitch = true;
+                            // 确保P的速度在步骤4开始时正确设置为5m/s
+                            p.v = 5;
+                            // Q继续自然减速，不强制设置位置和状态
+                            // 让Q在步骤4和5中继续减速直到停止
+                        }
+                        // 检查Q是否已经停止
+                        if (qStopped && q.x !== 4.225) {
+                            console.log('Q已停止但位置不是4.225m:', q.x.toFixed(3) + 'm');
+                        }
+                        break;
+
+                    case 4: // P滑出第一段（静态）
+                    case 6: // P到达第二段入口（静态）
+                    case 8: // P滑出第二段（静态）
+                    case 10: // P到达第三段入口（静态）
+                        // 这些静态步骤需要手动点击播放按钮切换
+                        break;
+
+                    case 5: // P第一段光滑区运动（动态）
+                        if (pRealPosition >= 8.4) {
+                            nextStep = 6; // 切换到到达第二段入口
+                            shouldSwitch = true;
+                            // 确保Q在进入后续步骤前已经停止
+                            if (!qStopped && q.x <= 4.225) {
+                                console.log('Q在进入步骤6时仍在运动，位置:', q.x.toFixed(3) + 'm');
+                            }
+                        }
+                        break;
+
+                    case 7: // P第二段防滑带减速（动态）
+                        if (pRealPosition >= 10.8) {
+                            nextStep = 8; // 切换到滑出第二段
+                            shouldSwitch = true;
+                            // 确保P的速度在步骤8开始时正确设置为1m/s
+                            p.v = 1;
+                        }
+                        break;
+
+                    case 9: // P第二段光滑区运动（动态）
+                        if (pRealPosition >= 13.8) {
+                            nextStep = 10; // 切换到到达第三段入口
+                            shouldSwitch = true;
+                        }
+                        break;
+
+                    case 11: // P第三段防滑带减速（动态）
+                        // 检查两个物块是否都停止了
+                        if (pStopped && qStopped) {
+                            nextStep = 12; // 切换到最终停止
+                            shouldSwitch = true;
+                        }
+                        break;
+                }
+
+                // 执行步骤切换
+                if (shouldSwitch && nextStep !== currentStep) {
+                    const previousStep = currentStep;
+                    currentStep = nextStep;
+                    console.log(`自动切换: ${previousStep} → ${currentStep}: ${animationSteps[currentStep].name}`);
+
+                    updateStepDisplay();
+
+                    // 如果切换到静态步骤，暂停动画
+                    const newStepData = animationSteps[currentStep];
+                    if (newStepData.isPaused) {
+                        isPlaying = false;
+                        if (playBtn) {
+                            playBtn.innerHTML = '<i class="fa fa-play text-xl"></i>';
+                        }
+                        if (statusText) {
+                            if (newStepData.isStatic) {
+                                statusText.textContent = "静态步骤 - 点击播放继续";
+                            } else {
+                                statusText.textContent = "动画已暂停 - 点击播放继续";
+                            }
+                        }
+                    }
+                }
+            }
+
+            // 更新物理状态 - 区分静态和动态步骤
+            function update() {
+                console.log('动画帧更新，当前步骤:', currentStep, '是否静态:', animationSteps[currentStep].isStatic, 'Q速度:', q.v, 'P速度:', p.v);
+
+                // 动画继续运行...
+
+                // 核心检查：确保isPlaying为true
+                if (!isPlaying) {
+                    console.log('动画已暂停');
+                    return;
+                }
+
+                // 检查当前步骤是否为静态步骤
+                const currentStepData = animationSteps[currentStep];
+                if (currentStepData.isStatic) {
+                    // 静态步骤：物块不移动，只显示状态
+                    console.log('当前为静态步骤，物块不移动');
+                    // 绘制当前帧并返回
+                    draw();
+                    return;
+                }
+                
+                // 改进的碰撞检测（使用逻辑位置）
+                if (!hasCollided) {
+                    // 转换物块宽度为逻辑单位（米），假设宽度为0.5米
+                    const blockWidth = 0.5;
+
+                    // 精确的碰撞检测：Q的右边缘到达P的左边缘
+                    if (q.x + blockWidth >= p.x) {
+                        // 碰撞发生！
+                        hasCollided = true;
+
+                        // 将两个物块的位置设置为碰撞位置（避免重叠）
+                        const collisionPosition = (q.x + blockWidth + p.x) / 2;
+                        p.x = collisionPosition;
+                        q.x = collisionPosition - blockWidth;
+
+                        // 设置碰撞后的速度 - 严格按照题目数据
+                        p.v = v1_after; // 7m/s（已经是逻辑速度）
+                        q.v = v2_after; // 3.5m/s（已经是逻辑速度）
+
+                        console.log('碰撞发生！碰撞位置:', collisionPosition.toFixed(2) + 'm');
+                        console.log('碰撞后 - P速度:', p.v + 'm/s, Q速度:', q.v + 'm/s');
+                    }
+                }
+                
+                // 应用速度倍数进行位置更新
+                const effectiveDt = dt * speedMultiplier; // 使用真实的时间步长
+
+                // 更新逻辑位置（以米为单位）
+                if (!qStopped) {
+                    q.x += q.v * effectiveDt; // 直接使用速度单位（米/秒）
+                }
+
+                // P在碰撞后才开始运动
+                if (!pStopped && hasCollided) {
+                    p.x += p.v * effectiveDt; // 直接使用速度单位（米/秒）
+                }
+
+                // 注释掉强制位置调整逻辑，让Q自然减速
+                // Q和P的速度差是自然的（7m/s vs 3.5m），Q不会跑到P前面
+                // 让物理规律自然决定两者的相对位置
+                
+                // Q物块的摩擦减速逻辑（碰撞后也会受摩擦力影响）
+                if (!qStopped) {
+                    // Q在防滑带上也会减速
+                    const qInFriction = (q.x >= 3 && q.x <= 5.4) ||
+                                       (q.x >= 8.4 && q.x <= 10.8) ||
+                                       (q.x >= 13.8 && q.x <= 16.2);
+
+                    // 添加调试信息
+                    if (currentStep >= 3) { // 只在碰撞后显示调试信息
+                        console.log(`Q状态 - 位置: ${q.x.toFixed(3)}m, 速度: ${q.v.toFixed(3)}m/s, 在防滑带: ${qInFriction}`);
+                    }
+
+                    if (qInFriction) {
+                        q.v += a_friction * effectiveDt; // 应用摩擦加速度（米/秒²）
+                        if (q.v <= 0) {
+                            q.v = 0;
+                            qStopped = true;
+                            console.log('Q停止！位置:', q.x.toFixed(3) + 'm');
+                        }
+                    }
+                }
+
+                if (!pStopped && hasCollided) {
+                    // P严格按照题目数据：在光滑区域匀速，在防滑带区域以a=-5m/s²减速
+                    const pInFriction = (p.x >= 3 && p.x <= 5.4) ||
+                                       (p.x >= 8.4 && p.x <= 10.8) ||
+                                       (p.x >= 13.8 && p.x <= 16.2);
+
+                    if (pInFriction) {
+                        p.v += a_friction * effectiveDt; // 应用摩擦加速度（米/秒²）
+                        if (p.v <= 0) {
+                            p.v = 0;
+                            pStopped = true;
+                            console.log('P已停止');
+                        }
+                    }
+                }
+                
+                // 更新状态文本
+                if (statusText) {
+                    let status = `[步骤${currentStep}] ${animationSteps[currentStep].name}`;
+
+                    if (!hasCollided) {
+                        status += ` - Q接近中 (位置: ${q.x.toFixed(2)}m, 速度: ${q.v.toFixed(2)}m/s)`;
+                    } else if (pStopped && qStopped) {
+                        status += ` - 所有物体已停止 (P: ${p.x.toFixed(2)}m)`;
+                    } else {
+                        status += ` - 碰撞后运动中 (P: ${p.x.toFixed(2)}m, ${p.v.toFixed(2)}m/s; Q: ${q.x.toFixed(2)}m, ${q.v.toFixed(2)}m/s)`;
+                    }
+                    statusText.textContent = status;
+                }
+
+                // 检查步骤转换
+                checkStepTransition();
+
+                // 绘制当前帧
+                draw();
+
+                // 检查是否所有物体都已停止
+                if (pStopped && qStopped) {
+                    console.log('所有物块已停止，动画结束');
+
+                    // 强制切换到最终停止步骤（如果还没切换）
+                    if (currentStep !== 12) {
+                        currentStep = 12;
+                        updateStepDisplay();
+                        if (playBtn) {
+                            playBtn.innerHTML = '<i class="fa fa-play text-xl"></i>';
+                        }
+                        if (statusText) {
+                            statusText.textContent = "动画已完成 - 所有物块已停止";
+                        }
+                    }
+
+                    stopAnimation();
+                    return;
+                }
+
+                // 确保动画继续运行（只有当至少有一个物块还在运动时）
+                if (isPlaying) {
+                    animationId = requestAnimationFrame(update);
+                }
+            }
+            
+            // 控制函数 - 简化启动逻辑
+            function startAnimation() {
+                // 如果已经在播放，则不做任何操作
+                if (isPlaying) {
+                    console.log('动画已经在播放中');
+                    return;
+                }
+
+                console.log('准备开始动画播放');
+
+                // 设置播放状态为true
+                isPlaying = true;
+
+                // 更新状态文本
+                if (statusText) {
+                    statusText.textContent = "动画播放中...";
+                }
+
+                // 更新按钮状态
+                if (playBtn) {
+                    playBtn.innerHTML = '<i class="fa fa-pause text-xl"></i>';
+                }
+
+                console.log('动画开始播放！');
+
+                // 立即调用一次update函数开始动画循环
+                update();
+            }
+            
+            function stopAnimation() {
+                if (!isPlaying) return;
+                isPlaying = false;
+                if (animationId) {
+                    cancelAnimationFrame(animationId);
+                    animationId = null;
+                }
+
+                // 更新按钮状态
+                if (playBtn) {
+                    playBtn.innerHTML = '<i class="fa fa-play text-xl"></i>';
+                }
+
+                // 更新状态文本
+                if (statusText) {
+                    statusText.textContent = "动画已暂停";
+                }
+
+                console.log('动画已停止');
+            }
+            
+            function resetAnimation() {
+                // 先停止当前动画
+                stopAnimation();
+
+                console.log('开始重置动画状态...');
+
+                // 重置状态变量
+                time = 0;
+                hasCollided = false;
+                pStopped = false;
+                qStopped = false;
+
+                // 重置步骤系统
+                currentStep = 0;
+                updateStepDisplay();
+
+                // 重新设置物体P的初始状态 - 按照题目数据（使用逻辑位置）
+                p.x = 3; // 3米位置，第一段防滑带开始处
+                p.y = canvas.height - 60 - 40; // 确保在地面上方
+                p.v = 0;  // 初始静止
+                p.a = 0;
+
+                // 重新设置物体Q的初始状态 - 按照题目数据（使用逻辑位置）
+                q.x = 1;  // 1米位置
+                q.y = canvas.height - 60 - 40; // 确保在地面上方
+                q.v = v0; // 7m/s
+                q.a = 0;
+
+                // 更新状态文本
+                if (statusText) {
+                    statusText.textContent = "准备就绪 - 点击播放开始动画";
+                }
+
+                // 确保按钮状态正确
+                if (playBtn) {
+                    playBtn.innerHTML = '<i class="fa fa-play text-xl"></i>';
+                }
+
+                console.log('动画重置完成，Q的初始速度:', q.v, 'P的位置:', p.x, 'Q的位置:', q.x);
+
+                // 动画重置完成...
+
+                // 重新绘制画布
+                draw();
+            }
+            
+            // 事件监听 - 简化并修复按钮事件绑定
+            console.log('开始绑定按钮事件监听器...');
+
+            // 步骤面板展开/折叠功能
+            const stepsPanelToggle = document.getElementById('stepsPanelToggle');
+            const stepsPanelContent = document.getElementById('stepsPanelContent');
+            const stepsPanelIcon = document.getElementById('stepsPanelIcon');
+            const stepsList = document.getElementById('stepsList');
+            const stepDescription = document.getElementById('stepDescription');
+
+            stepsPanelToggle.addEventListener('click', function() {
+                // 检查步骤列表是否显示
+                const isListVisible = stepsList.style.display !== 'none';
+                if (isListVisible) {
+                    // 折叠时只隐藏步骤列表，保留当前步骤说明
+                    stepsList.style.display = 'none';
+                    stepsPanelIcon.style.transform = 'rotate(-90deg)';
+                    // 确保步骤面板内容区域仍显示
+                    stepsPanelContent.style.display = 'block';
+                } else {
+                    // 展开时显示所有内容
+                    stepsList.style.display = 'block';
+                    stepsPanelIcon.style.transform = 'rotate(0deg)';
+                }
+            });
+
+            // 播放按钮点击事件
+            playBtn.addEventListener('click', function(e) {
+                console.log('播放按钮被点击，当前步骤:', currentStep, 'isPlaying:', isPlaying);
+                e.preventDefault();
+                e.stopPropagation();
+
+                if (isPlaying) {
+                    console.log('当前正在播放，停止动画');
+                    stopAnimation();
+                } else {
+                    // 检查当前是否为静态步骤
+                    const currentStepData = animationSteps[currentStep];
+                    console.log('当前步骤类型:', currentStepData.name, 'isStatic:', currentStepData.isStatic);
+
+                    if (currentStepData.isStatic) {
+                        console.log('当前为静态步骤，寻找下一个动态步骤');
+                        // 静态步骤：找到下一个动态步骤
+                        let nextStep = currentStep + 1;
+                        while (nextStep < animationSteps.length && animationSteps[nextStep].isStatic) {
+                            nextStep++;
+                        }
+
+                        if (nextStep < animationSteps.length) {
+                            console.log(`准备切换到步骤${nextStep}: ${animationSteps[nextStep].name}`);
+
+                            // 设置标志，表示这是手动切换，防止自动检测覆盖
+                            window.manualStepChange = true;
+
+                            // 先切换步骤
+                            currentStep = nextStep;
+
+                            // 重置状态到新步骤
+                            resetToStep(currentStep);
+                            updateStepDisplay();
+
+                            // 清除标志
+                            setTimeout(() => {
+                                window.manualStepChange = false;
+                            }, 500);
+
+                            // 如果下一步是动态步骤，延迟一点开始播放以确保界面更新
+                            if (!animationSteps[nextStep].isStatic) {
+                                console.log('下一步是动态步骤，准备开始播放动画');
+                                // 使用setTimeout确保界面更新完成后再开始播放
+                                setTimeout(() => {
+                                    console.log('延迟后开始播放动画');
+                                    startAnimation();
+                                }, 100);
+                            } else {
+                                console.log('下一步仍然是静态步骤，等待用户操作');
+                                if (statusText) {
+                                    statusText.textContent = "静态步骤 - 点击播放继续";
+                                }
+                            }
+                        } else {
+                            console.log('已经是最后一步了');
+                            if (statusText) {
+                                statusText.textContent = "动画已结束";
+                            }
+                        }
+                    } else {
+                        console.log('当前为动态步骤，开始播放动画');
+                        startAnimation();
+                    }
+                }
+            });
+
+            console.log('播放按钮事件绑定成功');
+
+            
+            // 重置按钮点击事件
+            resetBtn.addEventListener('click', function() {
+                console.log('重置按钮被点击');
+                resetAnimation();
+            });
+            console.log('重置按钮事件绑定成功');
+
+            // 缩放按钮事件绑定
+            if (zoomInBtn) {
+                zoomInBtn.addEventListener('click', function() {
+                    console.log('放大按钮被点击');
+                    zoomIn();
+                });
+            }
+
+            if (zoomOutBtn) {
+                zoomOutBtn.addEventListener('click', function() {
+                    console.log('缩小按钮被点击');
+                    zoomOut();
+                });
+            }
+
+            if (zoomResetBtn) {
+                zoomResetBtn.addEventListener('click', function() {
+                    console.log('重置缩放按钮被点击');
+                    zoomReset();
+                });
+            }
+            console.log('缩放按钮事件绑定成功');
+            
+            // 设置速度控制滑块事件
+            function setupSpeedControls() {
+                const speedSlider = document.getElementById('speedSlider');
+                const speedValue = document.getElementById('speedValue');
+
+                if (speedSlider && speedValue) {
+                    // 设置滑块样式 - 匹配新的速度范围
+                    speedSlider.style.background = `linear-gradient(to right, #165DFF 0%, #165DFF ${(speedMultiplier - 0.05) / 0.45 * 100}%, #E5E7EB ${(speedMultiplier - 0.05) / 0.45 * 100}%, #E5E7EB 100%)`;
+
+                    speedSlider.addEventListener('input', function() {
+                        speedMultiplier = parseFloat(this.value);
+                        speedValue.textContent = speedMultiplier.toFixed(2) + 'x';
+
+                        // 更新滑块背景色 - 匹配新的速度范围
+                        const percentage = (speedMultiplier - 0.05) / 0.45 * 100;
+                        this.style.background = `linear-gradient(to right, #165DFF 0%, #165DFF ${percentage}%, #E5E7EB ${percentage}%, #E5E7EB 100%)`;
+
+                        console.log('设置播放速度为', speedMultiplier, '倍');
+                    });
+                }
+            }
+
+            // 设置步骤控制按钮事件
+            if (prevStepBtn && nextStepBtn) {
+                prevStepBtn.addEventListener('click', () => {
+                    if (currentStep > 0) {
+                        goToStep(currentStep - 1);
+                    }
+                });
+
+                nextStepBtn.addEventListener('click', () => {
+                    if (currentStep < animationSteps.length - 1) {
+                        // 继续播放，让动画自动进行到下一步
+                        if (!isPlaying) {
+                            startAnimation();
+                        }
+                    }
+                });
+            }
+
+            // 初始化设置
+            setupSpeedControls();
+            // 初始化完成
+            initializeStepsList(); // 初始化步骤列表
+            updateStepDisplay(); // 更新步骤显示
+
+            // 初始绘制
+            console.log('初始化完成，进行初始绘制');
+
+            // 初始化缩放级别显示
+            updateScale();
+            draw();
+
+            console.log('事件监听已绑定');
+            console.log('动画初始化完成');
+            console.log('播放按钮状态：', playBtn ? '已找到' : '未找到');
+            console.log('点击播放按钮开始演示');
+        });
+        
+        // 额外添加键盘控制以方便测试
+        document.addEventListener('keydown', function(e) {
+            if (e.code === 'Space') {
+                e.preventDefault();
+                const playBtn = document.getElementById('playBtn');
+                if (playBtn) playBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>
